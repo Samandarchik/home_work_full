@@ -1,7 +1,5 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
-import 'package:home_work_full/3_food_app/color3.dart';
 
 class FloatingActionButton12 extends StatelessWidget {
   final VoidCallback press;
