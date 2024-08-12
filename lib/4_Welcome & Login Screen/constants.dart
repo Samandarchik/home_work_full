@@ -1,0 +1,40 @@
+import 'package:flutter/material.dart';
+
+const kBackgroundColor = Color(0xFF202020);
+const kPrimaryColor = Color(0xFFFFBD73);
+const stiletext =
+    TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 35);
+final kflo = TextFormField(
+  style: TextStyle(color: Colors.white),
+  cursorColor: Colors.white,
+  decoration: InputDecoration(
+      focusColor: Colors.white,
+      focusedBorder: UnderlineInputBorder(
+        borderSide: BorderSide(color: Colors.white),
+      ),
+      icon: Icon(
+        Icons.alternate_email,
+        color: kPrimaryColor,
+      ),
+      hintText: " Email Address",
+      hintStyle: TextStyle(color: Colors.white.withOpacity(.5))),
+  keyboardType: TextInputType.emailAddress,
+);
+
+final kflo1 = TextFormField(
+  obscureText: true,
+  style: TextStyle(color: Colors.white),
+  cursorColor: Colors.white,
+  decoration: InputDecoration(
+      focusColor: Colors.white,
+      focusedBorder: UnderlineInputBorder(
+        borderSide: BorderSide(color: Colors.white),
+      ),
+      icon: Icon(
+        Icons.password,
+        color: kPrimaryColor,
+      ),
+      hintText: " Password",
+      hintStyle: TextStyle(color: Colors.white.withOpacity(.5))),
+  keyboardType: TextInputType.visiblePassword,
+);
