@@ -1,6 +1,6 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:home_work_full/4_Welcome%20&%20Login%20Screen/constants.dart';
+import 'package:home_work_full/8_sign_app/Screens/Welcome/welcome_Screen.dart';
 
 class SignIn extends StatelessWidget {
   const SignIn({super.key});
@@ -80,15 +80,22 @@ class SignIn extends StatelessWidget {
                         ),
                       ),
                       Spacer(),
-                      Container(
-                        padding: EdgeInsets.all(20),
-                        decoration: BoxDecoration(
-                            color: kPrimaryColor, shape: BoxShape.circle),
-                        child: Icon(
-                          Icons.arrow_forward_ios,
-                          size: 20,
-                        ),
-                      )
+                      IconButton(
+                          onPressed: () {
+                            Navigator.push(context,
+                                MaterialPageRoute(builder: (context) {
+                              return WelcomeScreen();
+                            }));
+                          },
+                          icon: Container(
+                            padding: EdgeInsets.all(20),
+                            decoration: BoxDecoration(
+                                color: kPrimaryColor, shape: BoxShape.circle),
+                            child: Icon(
+                              Icons.arrow_forward_ios,
+                              size: 20,
+                            ),
+                          ))
                     ],
                   ),
                 ),
