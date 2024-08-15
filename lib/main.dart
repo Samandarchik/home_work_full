@@ -12,7 +12,8 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         scaffoldBackgroundColor: Colors.white,
         floatingActionButtonTheme: FloatingActionButtonThemeData(
-            backgroundColor: Colors.red, foregroundColor: Colors.white),
+            backgroundColor: Color.fromARGB(255, 244, 67, 54),
+            foregroundColor: Colors.white),
       ),
       debugShowCheckedModeBanner: false,
       home: HomePage1(),

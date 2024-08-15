@@ -82,29 +82,37 @@ class HomePage1 extends StatelessWidget {
                     crossAxisCount: 2),
                 itemBuilder: (context, index) {
                   Category category = categoryList[index];
-                  return Container(
-                    padding: EdgeInsets.all(20),
-                    height: index.isEven ? 200 : 240,
-                    decoration: BoxDecoration(
-                      image: DecorationImage(
-                          fit: BoxFit.fill,
-                          image: AssetImage(
-                            category.image,
-                          )),
-                      borderRadius: BorderRadius.circular(16),
-                    ),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          category.name,
-                          style: kTitleTextStyle,
-                        ),
-                        Text(
-                          "${category.numOfCourses} Course",
-                          style: TextStyle(color: kTextColor.withOpacity(.5)),
-                        )
-                      ],
+                  return InkWell(
+                    onTap: () {
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (context) {
+                        return DetaliesScreen1();
+                      }));
+                    },
+                    child: Container(
+                      padding: EdgeInsets.all(20),
+                      height: index.isEven ? 200 : 240,
+                      decoration: BoxDecoration(
+                        image: DecorationImage(
+                            fit: BoxFit.fill,
+                            image: AssetImage(
+                              category.image,
+                            )),
+                        borderRadius: BorderRadius.circular(16),
+                      ),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            category.name,
+                            style: kTitleTextStyle,
+                          ),
+                          Text(
+                            "${category.numOfCourses} Course",
+                            style: TextStyle(color: kTextColor.withOpacity(.5)),
+                          )
+                        ],
+                      ),
                     ),
                   );
                 },
