@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:home_work_full/1_course_app/constants_1.dart';
@@ -13,70 +12,68 @@ class InfoScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: SingleChildScrollView(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              MyHeader(
-                images: "assets/icons/coronadr.svg",
-                textTop: "Get to know",
-                textBottom: "About Covid-19.",
+        body: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            MyHeader(
+              images: "assets/icons/coronadr.svg",
+              textTop: "Get to know",
+              textBottom: "About Covid-19.",
+            ),
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: 20),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    "Symptoms",
+                    style: kTitleTextStyle,
+                  ),
+                  SizedBox(
+                    height: 20,
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      SymptomsCard(
+                        images: "assets/images/headache.png",
+                        symptom: "Headache",
+                        isActive: true,
+                      ),
+                      SymptomsCard(
+                        images: "assets/images/caugh.png",
+                        symptom: "Caugh",
+                        isActive: false,
+                      ),
+                      SymptomsCard(
+                        images: "assets/images/fever.png",
+                        symptom: "Fever",
+                        isActive: false,
+                      ),
+                    ],
+                  ),
+                  SizedBox(
+                    height: 20,
+                  ),
+                  PreventCard(
+                    images: "assets/images/wear_mask.png",
+                    title:
+                        "Since the start of the coronavirus outbreak some places have fully embraced wearing facemasks",
+                    text: "Wear face mask",
+                  ),
+                  SizedBox(
+                    height: 20,
+                  ),
+                  PreventCard(
+                    images: "assets/images/wash_hands.png",
+                    title:
+                        "Since the start of the coronavirus outbreak some places have fully embraced wearing facemasks",
+                    text: "Wear your handas",
+                  ),
+                ],
               ),
-              Padding(
-                padding: EdgeInsets.symmetric(horizontal: 20),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      "Symptoms",
-                      style: kTitleTextStyle,
-                    ),
-                    SizedBox(
-                      height: 20,
-                    ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        SymptomsCard(
-                          images: "assets/images/headache.png",
-                          symptom: "Headache",
-                          isActive: true,
-                        ),
-                        SymptomsCard(
-                          images: "assets/images/caugh.png",
-                          symptom: "Caugh",
-                          isActive: false,
-                        ),
-                        SymptomsCard(
-                          images: "assets/images/fever.png",
-                          symptom: "Fever",
-                          isActive: false,
-                        ),
-                      ],
-                    ),
-                    SizedBox(
-                      height: 20,
-                    ),
-                    PreventCard(
-                      images: "assets/images/wear_mask.png",
-                      title:
-                          "Since the start of the coronavirus outbreak some places have fully embraced wearing facemasks",
-                      text: "Wear face mask",
-                    ),
-                    SizedBox(
-                      height: 20,
-                    ),
-                    PreventCard(
-                      images: "assets/images/wash_hands.png",
-                      title:
-                          "Since the start of the coronavirus outbreak some places have fully embraced wearing facemasks",
-                      text: "Wear your handas",
-                    ),
-                  ],
-                ),
-              )
-            ],
-          ),
+            )
+          ],
         ),
         floatingActionButton: FloatingActionButton12(
           press: () {
