@@ -1,3 +1,4 @@
+import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:home_work_full/5_book_app/screens/home_screen.dart';
 import 'package:home_work_full/5_book_app/widget/RoundedButton.dart';
@@ -45,6 +46,14 @@ class WelcomeScreen extends StatelessWidget {
                 fontSize: 20,
               ),
             ),
+            ElevatedButton(
+                onPressed: () {
+                  exit(0);
+                },
+                child: Text(
+                  "Exit",
+                  style: TextStyle(fontSize: 29),
+                ))
           ],
         ),
       ),

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:home_work_full/5_book_app/color.dart';
 import 'package:home_work_full/5_book_app/widget/RoundedButton.dart';
 import 'package:home_work_full/5_book_app/widget/book_reating.dart';
-import 'package:home_work_full/floating_action_button.dart';
+import 'package:home_work_full/6_Meditation_app/home_screen6.dart';
 
 class InfoScreen extends StatelessWidget {
   const InfoScreen({super.key});
@@ -44,25 +44,45 @@ class InfoScreen extends StatelessWidget {
                   child: Column(
                     children: [
                       ChapterCard(
-                        press: () {},
+                        press: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => HomeScreen6()));
+                        },
                         name: "Money",
                         tag: "Lise is about change",
                         chapterNumber: 1,
                       ),
                       ChapterCard(
-                        press: () {},
+                        press: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => HomeScreen6()));
+                        },
                         name: "Power",
                         tag: "Everything loves power",
                         chapterNumber: 2,
                       ),
                       ChapterCard(
-                        press: () {},
+                        press: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => HomeScreen6()));
+                        },
                         name: "Influence",
                         tag: "Influence easily like never before",
                         chapterNumber: 3,
                       ),
                       ChapterCard(
-                        press: () {},
+                        press: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => HomeScreen6()));
+                        },
                         name: "Win",
                         tag: "Winning is what matters",
                         chapterNumber: 4,
@@ -133,7 +153,13 @@ class InfoScreen extends StatelessWidget {
                                           Expanded(
                                               child: RoundedButton(
                                                   text1: "Read",
-                                                  press: () {},
+                                                  press: () {
+                                                    Navigator.push(
+                                                        context,
+                                                        MaterialPageRoute(
+                                                            builder: (context) =>
+                                                                HomeScreen6()));
+                                                  },
                                                   verticalPadding: 8))
                                         ])
                                       ],
