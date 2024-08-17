@@ -25,9 +25,9 @@ class WelcomeScreen extends StatelessWidget {
 String number = "1";
 
 class Mynumber extends StatefulWidget {
-  int number1;
-  String alpabet;
-  Mynumber({super.key, required this.number1, required this.alpabet});
+  final int number1;
+  final String alpabet;
+  const Mynumber({super.key, required this.number1, required this.alpabet});
 
   @override
   State<Mynumber> createState() => _MynumberState();

@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:home_work_full/5_book_app/color.dart';
 
 class BookRating extends StatelessWidget {
-  double rating;
-  BookRating({super.key, required this.rating});
+  final double rating;
+  const BookRating({super.key, required this.rating});
 
   @override
   Widget build(BuildContext context) {
@@ -14,7 +14,8 @@ class BookRating extends StatelessWidget {
           color: Colors.white,
           borderRadius: BorderRadius.circular(16),
           boxShadow: [
-            BoxShadow(offset: Offset(3, 7), blurRadius: 20, color: ShadowColor5)
+            BoxShadow(
+                offset: Offset(3, 7), blurRadius: 20, color: kShadowColor5)
           ]),
       child: Column(
         children: [

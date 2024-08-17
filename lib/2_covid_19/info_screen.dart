@@ -12,68 +12,71 @@ class InfoScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            MyHeader(
-              images: "assets/icons/coronadr.svg",
-              textTop: "Get to know",
-              textBottom: "About Covid-19.",
-            ),
-            Padding(
-              padding: EdgeInsets.symmetric(horizontal: 20),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    "Symptoms",
-                    style: kTitleTextStyle,
-                  ),
-                  SizedBox(
-                    height: 20,
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      SymptomsCard(
-                        images: "assets/images/headache.png",
-                        symptom: "Headache",
-                        isActive: true,
-                      ),
-                      SymptomsCard(
-                        images: "assets/images/caugh.png",
-                        symptom: "Caugh",
-                        isActive: false,
-                      ),
-                      SymptomsCard(
-                        images: "assets/images/fever.png",
-                        symptom: "Fever",
-                        isActive: false,
-                      ),
-                    ],
-                  ),
-                  SizedBox(
-                    height: 20,
-                  ),
-                  PreventCard(
-                    images: "assets/images/wear_mask.png",
-                    title:
-                        "Since the start of the coronavirus outbreak some places have fully embraced wearing facemasks",
-                    text: "Wear face mask",
-                  ),
-                  SizedBox(
-                    height: 20,
-                  ),
-                  PreventCard(
-                    images: "assets/images/wash_hands.png",
-                    title:
-                        "Since the start of the coronavirus outbreak some places have fully embraced wearing facemasks",
-                    text: "Wear your handas",
-                  ),
-                ],
+        body: SingleChildScrollView(
+          scrollDirection: Axis.vertical,
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              MyHeader(
+                images: "assets/icons/coronadr.svg",
+                textTop: "Get to know",
+                textBottom: "About Covid-19.",
               ),
-            )
-          ],
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: 20),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      "Symptoms",
+                      style: kTitleTextStyle,
+                    ),
+                    SizedBox(
+                      height: 20,
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        SymptomsCard(
+                          images: "assets/images/headache.png",
+                          symptom: "Headache",
+                          isActive: true,
+                        ),
+                        SymptomsCard(
+                          images: "assets/images/caugh.png",
+                          symptom: "Caugh",
+                          isActive: false,
+                        ),
+                        SymptomsCard(
+                          images: "assets/images/fever.png",
+                          symptom: "Fever",
+                          isActive: false,
+                        ),
+                      ],
+                    ),
+                    SizedBox(
+                      height: 20,
+                    ),
+                    PreventCard(
+                      images: "assets/images/wear_mask.png",
+                      title:
+                          "Since the start of the coronavirus outbreak some places have fully embraced wearing facemasks",
+                      text: "Wear face mask",
+                    ),
+                    SizedBox(
+                      height: 20,
+                    ),
+                    PreventCard(
+                      images: "assets/images/wash_hands.png",
+                      title:
+                          "Since the start of the coronavirus outbreak some places have fully embraced wearing facemasks",
+                      text: "Wear your handas",
+                    ),
+                  ],
+                ),
+              )
+            ],
+          ),
         ),
         floatingActionButton: FloatingActionButton12(
           press: () {
@@ -159,8 +162,8 @@ class PreventCard extends StatelessWidget {
 }
 
 class SymptomsCard extends StatefulWidget {
-  String images;
-  String symptom;
+  final String images;
+  final String symptom;
   bool isActive;
   SymptomsCard(
       {super.key,

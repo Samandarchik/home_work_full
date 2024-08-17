@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 
 class RoundedButton extends StatelessWidget {
-  String text1;
-  VoidCallback press;
-  double? verticalPadding = 16;
-  double? fontSize = 16.0;
-  RoundedButton(
+  final String text1;
+  final VoidCallback press;
+  final double verticalPadding;
+  final double? fontSize;
+  const RoundedButton(
       {super.key,
       required this.text1,
       required this.press,
-      this.verticalPadding,
+      required this.verticalPadding,
       this.fontSize});
 
   @override
@@ -18,7 +18,8 @@ class RoundedButton extends StatelessWidget {
       onTap: press,
       child: Container(
         margin: EdgeInsets.symmetric(vertical: 20),
-        padding: EdgeInsets.symmetric(horizontal: 30, vertical: 13),
+        padding:
+            EdgeInsets.symmetric(horizontal: 30, vertical: verticalPadding),
         decoration: BoxDecoration(boxShadow: [
           BoxShadow(
               offset: Offset(0, 3),

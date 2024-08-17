@@ -28,152 +28,158 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
         backgroundColor: kBackgroundColor,
-        body: Column(
-          children: [
-            MyHeader(
-                images: "assets/icons/Drcorona.svg",
-                textTop: "All you need",
-                textBottom: "is stay at home"),
-            Container(
-              margin: EdgeInsets.symmetric(horizontal: 20),
-              padding: EdgeInsets.symmetric(vertical: 10, horizontal: 20),
-              height: 60,
-              width: double.infinity,
-              decoration: BoxDecoration(
-                border: Border.all(color: Color(0xFFE5E5E5)),
-                borderRadius: BorderRadius.circular(25),
-              ),
-              child: Row(
-                children: [
-                  SvgPicture.asset("assets/icons/maps-and-flags.svg"),
-                  const SizedBox(
-                    width: 10,
-                  ),
-                  Expanded(
-                    child: DropdownButton(
-                      dropdownColor: Colors.white,
-                      icon: SvgPicture.asset("assets/icons/dropdown.svg"),
-                      isExpanded: true,
-                      underline: SizedBox(),
-                      value: _selectedItem,
-                      items: _dropDownItems.map((String item) {
-                        return DropdownMenuItem(
-                          value: item,
-                          child: Text(item),
-                        );
-                      }).toList(),
-                      onChanged: (String? value) {
-                        setState(() {
-                          _selectedItem = value!;
-                        });
-                      },
+        body: SingleChildScrollView(
+          scrollDirection: Axis.vertical,
+          child: Column(
+            children: [
+              MyHeader(
+                  images: "assets/icons/Drcorona.svg",
+                  textTop: "All you need",
+                  textBottom: "is stay at home"),
+              Container(
+                margin: EdgeInsets.symmetric(horizontal: 20),
+                padding: EdgeInsets.symmetric(vertical: 10, horizontal: 20),
+                height: 60,
+                width: double.infinity,
+                decoration: BoxDecoration(
+                  border: Border.all(color: Color(0xFFE5E5E5)),
+                  borderRadius: BorderRadius.circular(25),
+                ),
+                child: Row(
+                  children: [
+                    SvgPicture.asset("assets/icons/maps-and-flags.svg"),
+                    const SizedBox(
+                      width: 10,
                     ),
-                  ),
-                ],
-              ),
-            ),
-            Padding(
-              padding: EdgeInsets.symmetric(horizontal: 20),
-              child: Column(
-                children: [
-                  SizedBox(
-                    height: 10,
-                  ),
-                  Row(
-                    children: [
-                      RichText(
-                        text: TextSpan(
-                          children: [
-                            TextSpan(
-                                text: "Case Update\n", style: kTitleTextstyle),
-                            TextSpan(
-                                text: "Newest update March 28",
-                                style: TextStyle(color: kTextLightColor))
-                          ],
-                        ),
+                    Expanded(
+                      child: DropdownButton(
+                        dropdownColor: Colors.white,
+                        icon: SvgPicture.asset("assets/icons/dropdown.svg"),
+                        isExpanded: true,
+                        underline: SizedBox(),
+                        value: _selectedItem,
+                        items: _dropDownItems.map((String item) {
+                          return DropdownMenuItem(
+                            value: item,
+                            child: Text(item),
+                          );
+                        }).toList(),
+                        onChanged: (String? value) {
+                          setState(() {
+                            _selectedItem = value!;
+                          });
+                        },
                       ),
-                      Spacer(),
-                      Text(
-                        "See details",
-                        style: TextStyle(
-                            color: kPrimaryColor, fontWeight: FontWeight.w600),
-                      )
-                    ],
-                  ),
-                  SizedBox(
-                    height: 20,
-                  ),
-                  Container(
-                    padding: EdgeInsets.all(20),
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(20),
-                      color: Colors.white,
-                      boxShadow: [
-                        BoxShadow(
-                          offset: Offset(0, 4),
-                          blurRadius: 30,
-                          color: kShadowColor,
-                        ),
-                      ],
                     ),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  ],
+                ),
+              ),
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: 20),
+                child: Column(
+                  children: [
+                    SizedBox(
+                      height: 10,
+                    ),
+                    Row(
                       children: [
-                        Counter(
-                            colorcounter: kInfectedColor,
-                            infectednumber: "1046",
-                            countername: "Infected"),
-                        Counter(
-                            colorcounter: kDeathColor,
-                            infectednumber: "87",
-                            countername: "Deaths"),
-                        Counter(
-                            colorcounter: kRecovercolor,
-                            infectednumber: "46",
-                            countername: "Recover")
+                        RichText(
+                          text: TextSpan(
+                            children: [
+                              TextSpan(
+                                  text: "Case Update\n",
+                                  style: kTitleTextstyle),
+                              TextSpan(
+                                  text: "Newest update March 28",
+                                  style: TextStyle(color: kTextLightColor))
+                            ],
+                          ),
+                        ),
+                        Spacer(),
+                        Text(
+                          "See details",
+                          style: TextStyle(
+                              color: kPrimaryColor,
+                              fontWeight: FontWeight.w600),
+                        )
                       ],
                     ),
-                  ),
-                  SizedBox(
-                    height: 20,
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Text(
-                        "Spread of Virus",
-                        style: kTitleTextstyle,
-                      ),
-                      Text(
-                        "See Details",
-                        style: TextStyle(
-                            fontWeight: FontWeight.w600, color: kPrimaryColor),
-                      )
-                    ],
-                  ),
-                  Container(
-                    margin: EdgeInsets.only(top: 20),
-                    padding: EdgeInsets.all(20),
-                    height: 178,
-                    width: double.infinity,
-                    decoration: BoxDecoration(
-                        color: Colors.white,
+                    SizedBox(
+                      height: 20,
+                    ),
+                    Container(
+                      padding: EdgeInsets.all(20),
+                      decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(20),
+                        color: Colors.white,
                         boxShadow: [
                           BoxShadow(
-                              offset: Offset(0, 10),
-                              blurRadius: 30,
-                              color: kShadowColor)
-                        ]),
-                    child: Image.asset(
-                      "assets/images/map.png",
-                      fit: BoxFit.contain,
+                            offset: Offset(0, 4),
+                            blurRadius: 30,
+                            color: kShadowColor,
+                          ),
+                        ],
+                      ),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Counter(
+                              colorcounter: kInfectedColor,
+                              infectednumber: "1046",
+                              countername: "Infected"),
+                          Counter(
+                              colorcounter: kDeathColor,
+                              infectednumber: "87",
+                              countername: "Deaths"),
+                          Counter(
+                              colorcounter: kRecovercolor,
+                              infectednumber: "46",
+                              countername: "Recover")
+                        ],
+                      ),
                     ),
-                  )
-                ],
-              ),
-            )
-          ],
+                    SizedBox(
+                      height: 20,
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text(
+                          "Spread of Virus",
+                          style: kTitleTextstyle,
+                        ),
+                        Text(
+                          "See Details",
+                          style: TextStyle(
+                              fontWeight: FontWeight.w600,
+                              color: kPrimaryColor),
+                        )
+                      ],
+                    ),
+                    Container(
+                      margin: EdgeInsets.only(top: 20),
+                      padding: EdgeInsets.all(20),
+                      height: 178,
+                      width: double.infinity,
+                      decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(20),
+                          boxShadow: [
+                            BoxShadow(
+                                offset: Offset(0, 10),
+                                blurRadius: 30,
+                                color: kShadowColor)
+                          ]),
+                      child: Image.asset(
+                        "assets/images/map.png",
+                        fit: BoxFit.contain,
+                      ),
+                    )
+                  ],
+                ),
+              )
+            ],
+          ),
         ),
         floatingActionButton: FloatingActionButton12(
           press: () {

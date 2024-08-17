@@ -1,7 +1,7 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:home_work_full/5_book_app/screens/home_screen.dart';
 import 'package:home_work_full/5_book_app/widget/RoundedButton.dart';
+import 'package:home_work_full/floating_action_button.dart';
 
 class WelcomeScreen extends StatelessWidget {
   const WelcomeScreen({super.key});
@@ -38,7 +38,7 @@ class WelcomeScreen extends StatelessWidget {
                 text1: "start reading",
                 press: () {
                   Navigator.push(context, MaterialPageRoute(builder: (context) {
-                    return HomeScreen4();
+                    return HomeScreen5();
                   }));
                 },
                 verticalPadding: 24,
@@ -48,6 +48,10 @@ class WelcomeScreen extends StatelessWidget {
           ],
         ),
       ),
+      floatingActionButton: FloatingActionButton12(press: () {
+        Navigator.push(
+            context, MaterialPageRoute(builder: (context) => HomeScreen5()));
+      }),
     );
   }
 }

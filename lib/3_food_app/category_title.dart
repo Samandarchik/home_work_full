@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:home_work_full/3_food_app/color3.dart';
 
 class CategoryTitle extends StatelessWidget {
-  String title;
-  bool active = false;
-  CategoryTitle({
+  final String title;
+  final bool active;
+  const CategoryTitle({
     super.key,
     required this.active,
     required this.title,

@@ -1,9 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:home_work_full/5_book_app/color.dart';
+import 'package:home_work_full/5_book_app/screens/info_screen.dart';
 import 'package:home_work_full/5_book_app/widget/book_reating.dart';
+import 'package:home_work_full/5_book_app/widget/reading_list_card.dart';
+import 'package:home_work_full/5_book_app/widget/two_side_rounded_button.dart';
+import 'package:home_work_full/floating_action_button.dart';
 
-class HomeScreen4 extends StatelessWidget {
-  const HomeScreen4({super.key});
+class HomeScreen5 extends StatelessWidget {
+  const HomeScreen5({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -18,132 +22,257 @@ class HomeScreen4 extends StatelessWidget {
             image: AssetImage("assets/images/main_page_bg.png"),
           ),
         ),
-        child: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 24),
+        child: SingleChildScrollView(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               SizedBox(
                 height: size.height * .1,
               ),
-              RichText(
-                text: TextSpan(
-                  style: TextStyle(color: Colors.black, fontSize: 40),
-                  children: [
-                    TextSpan(text: "What are you \nreading "),
-                    TextSpan(
-                        text: "today?",
-                        style: TextStyle(fontWeight: FontWeight.bold)),
-                  ],
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 24.0),
+                child: RichText(
+                  text: TextSpan(
+                    style: TextStyle(color: Colors.black, fontSize: 40),
+                    children: [
+                      TextSpan(text: "What are you \nreading "),
+                      TextSpan(
+                          text: "today?",
+                          style: TextStyle(fontWeight: FontWeight.bold)),
+                    ],
+                  ),
                 ),
               ),
               SizedBox(
                 height: 30,
               ),
-              Container(
-                height: 245,
-                width: 202,
-                child: Stack(
+              SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                child: Row(
                   children: [
-                    Positioned(
-                      bottom: 0,
-                      left: 0,
-                      right: 0,
-                      child: Container(
-                        height: 221,
-                        decoration: BoxDecoration(
-                          color: Colors.white,
-                          borderRadius: BorderRadius.circular(40),
-                          boxShadow: [
-                            BoxShadow(
-                                offset: Offset(0, 10),
-                                blurRadius: 30,
-                                color: ShadowColor5),
-                          ],
-                        ),
-                      ),
-                    ),
-                    Image.asset(
-                      "assets/images/book-1.png",
-                      width: 150,
-                    ),
-                    Positioned(
-                      top: 35,
-                      right: 10,
-                      child: Column(
+                    ReadingListCard(
+                        images: "assets/images/book-1.png",
+                        title: "Crushing & Influence",
+                        auth: "Gary Venchuk",
+                        rating: 4.9,
+                        pressDetails: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => InfoScreen()));
+                        },
+                        pressRead: () {}),
+                    ReadingListCard(
+                        images: "assets/images/book-2.png",
+                        title: "Top Ten Business Hacks",
+                        auth: "Herman Joel",
+                        rating: 4.8,
+                        pressDetails: () {},
+                        pressRead: () {}),
+                    SizedBox(
+                      width: 30,
+                    )
+                  ],
+                ),
+              ),
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: 24),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    RichText(
+                      text: TextSpan(
+                        style: head,
                         children: [
-                          IconButton(
-                              onPressed: () {},
-                              icon: Icon(Icons.favorite_border)),
-                          BookRating(
-                            rating: 4.9,
+                          TextSpan(text: "Best of the "),
+                          TextSpan(
+                            text: "day",
+                            style: TextStyle(fontWeight: FontWeight.w800),
                           ),
                         ],
                       ),
                     ),
-                    Positioned(
-                        top: 160,
-                        child: Container(
-                          height: 85,
-                          width: 202,
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Padding(
-                                padding: const EdgeInsets.only(left: 20),
-                                child: RichText(
-                                  text: TextSpan(
-                                    style: TextStyle(color: kBlackColor),
-                                    children: [
-                                      TextSpan(
-                                        text: "Crushing & Influence\n",
-                                        style: TextStyle(
-                                            fontWeight: FontWeight.bold),
-                                      ),
-                                      TextSpan(
-                                          text: "Gary Venchuk",
-                                          style: TextStyle(
-                                              color: kLightBlackColor))
-                                    ],
-                                  ),
-                                ),
-                              ),
-                              Spacer(),
-                              Row(
+                    bestOfTheDayCard(size),
+                    RichText(
+                      text: TextSpan(
+                        style: head,
+                        children: [
+                          TextSpan(text: "Continue "),
+                          TextSpan(
+                              text: "reading...",
+                              style: TextStyle(fontWeight: FontWeight.bold))
+                        ],
+                      ),
+                    ),
+                    SizedBox(
+                      height: 30,
+                    ),
+                    Container(
+                      height: 80,
+                      width: double.infinity,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(38.5),
+                        color: Colors.white,
+                        boxShadow: [
+                          BoxShadow(
+                              offset: Offset(0, 10),
+                              blurRadius: 33,
+                              color: kshadovColor),
+                        ],
+                      ),
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.circular(38.5),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Expanded(
+                                child: Padding(
+                              padding:
+                                  const EdgeInsets.only(right: 20, left: 30),
+                              child: Row(
                                 children: [
-                                  Container(
-                                    width: 101,
-                                    padding: EdgeInsets.symmetric(vertical: 10),
-                                    alignment: Alignment.center,
-                                    child: Text(
-                                      "Details",
+                                  Expanded(
+                                    child: Column(
+                                      mainAxisAlignment: MainAxisAlignment.end,
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      children: [
+                                        Text(
+                                          "Crushing & Influence",
+                                          style: ktextfw,
+                                        ),
+                                        Text("Gary Venchuk"),
+                                        Align(
+                                          alignment: Alignment.bottomRight,
+                                          child: Text(
+                                            "Chapter 7 of 10",
+                                            style: TextStyle(
+                                                fontSize: 13,
+                                                color: kLightBlackColor),
+                                          ),
+                                        ),
+                                        SizedBox(
+                                          height: 5,
+                                        )
+                                      ],
                                     ),
                                   ),
-                                  Expanded(
-                                      child: Container(
-                                    padding: EdgeInsets.symmetric(vertical: 10),
-                                    alignment: Alignment.center,
-                                    decoration: BoxDecoration(
-                                        color: kBlackColor,
-                                        borderRadius: BorderRadius.only(
-                                            topLeft: Radius.circular(29),
-                                            bottomRight: Radius.circular(29))),
-                                    child: Text(
-                                      "Read",
-                                      style: TextStyle(color: Colors.white),
-                                    ),
-                                  ))
+                                  Image.asset(
+                                    "assets/images/book-1.png",
+                                    width: 55,
+                                  )
                                 ],
-                              )
-                            ],
-                          ),
-                        ))
+                              ),
+                            )),
+                            Container(
+                              height: 7,
+                              width: size.width * .65,
+                              decoration: BoxDecoration(
+                                  color: kProgressIndicator,
+                                  borderRadius: BorderRadius.circular(7)),
+                            )
+                          ],
+                        ),
+                      ),
+                    ),
+                    SizedBox(
+                      height: 40,
+                    )
                   ],
                 ),
               )
             ],
           ),
         ),
+      ),
+      floatingActionButton: FloatingActionButton12(press: () {
+        Navigator.push(
+            context, MaterialPageRoute(builder: (context) => InfoScreen()));
+      }),
+    );
+  }
+
+  Container bestOfTheDayCard(Size size) {
+    return Container(
+      margin: EdgeInsets.symmetric(vertical: 20),
+      width: double.infinity,
+      height: 205,
+      child: Stack(
+        children: [
+          Positioned(
+            bottom: 0,
+            left: 0,
+            right: 0,
+            child: Container(
+              padding:
+                  EdgeInsets.only(left: 24, top: 24, right: size.width * .35),
+              height: 185,
+              width: double.infinity,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(29),
+                color: Color(0xFFEAEAEA).withOpacity(.45),
+              ),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    "New York Time Best For 11th March 2020",
+                    style: TextStyle(color: kLightBlackColor, fontSize: 9),
+                  ),
+                  SizedBox(
+                    height: 5,
+                  ),
+                  Text(
+                    "How To Win\n Friends & Influence",
+                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                  ),
+                  Text(
+                    "Gary Venchuk",
+                    style: TextStyle(color: kLightBlackColor),
+                  ),
+                  SizedBox(
+                    height: 10,
+                  ),
+                  Row(
+                    children: [
+                      BookRating(rating: 4.8),
+                      SizedBox(
+                        width: 5,
+                      ),
+                      Expanded(
+                        child: Text(
+                          maxLines: 3,
+                          overflow: TextOverflow.ellipsis,
+                          "When the sarth was fat and everyone warned to win the game of the",
+                          style:
+                              TextStyle(fontSize: 12, color: kLightBlackColor),
+                        ),
+                      ),
+                    ],
+                  )
+                ],
+              ),
+            ),
+          ),
+          Positioned(
+            right: 0,
+            top: 0,
+            child: Image.asset(
+              "assets/images/book-3.png",
+              width: size.width * .37,
+            ),
+          ),
+          Positioned(
+            right: 0,
+            bottom: 0,
+            child: SizedBox(
+              height: 40,
+              width: size.width * .3,
+              child:
+                  TwoSideRoundedButton(text: "Read", radious: 24, press: () {}),
+            ),
+          )
+        ],
       ),
     );
   }
