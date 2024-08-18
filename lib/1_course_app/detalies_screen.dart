@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:home_work_full/1_course_app/bulder1.dart';
@@ -13,7 +12,7 @@ class DetaliesScreen1 extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         body: Container(
-          decoration: BoxDecoration(
+          decoration: const BoxDecoration(
             color: Color(0xFFF5F4EF),
             image: DecorationImage(
               alignment: Alignment.topRight,
@@ -39,29 +38,29 @@ class DetaliesScreen1 extends StatelessWidget {
                             onPressed: () {}, icon: Icon(Icons.more_vert))
                       ],
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 30,
                     ),
                     ClipPath(
                       clipper: BestSellerClipper(),
                       child: Container(
                         color: kBestSellerColor,
-                        padding: EdgeInsets.only(
+                        padding: const EdgeInsets.only(
                             left: 10, top: 5, right: 20, bottom: 5),
                         child: Text(
                           "BestSeller".toUpperCase(),
-                          style: TextStyle(fontWeight: FontWeight.w600),
+                          style: const TextStyle(fontWeight: FontWeight.w600),
                         ),
                       ),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 10,
                     ),
-                    Text(
+                    const Text(
                       "Design Thinking",
                       style: kHeadingextStyle,
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 16,
                     ),
                     const Row(
@@ -87,7 +86,7 @@ class DetaliesScreen1 extends StatelessWidget {
                         Text("4.8")
                       ],
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 16,
                     ),
                     RichText(
@@ -105,7 +104,7 @@ class DetaliesScreen1 extends StatelessWidget {
                   ],
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 30,
               ),
               Expanded(
@@ -122,11 +121,11 @@ class DetaliesScreen1 extends StatelessWidget {
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Text(
+                          const Text(
                             "Course Content",
                             style: kHeadingextStyle,
                           ),
-                          SizedBox(
+                          const SizedBox(
                             height: 30,
                           ),
                           Expanded(
@@ -140,7 +139,7 @@ class DetaliesScreen1 extends StatelessWidget {
                                     onTap: () {
                                       Navigator.push(context,
                                           MaterialPageRoute(builder: (context) {
-                                        return CourseVidio();
+                                        return const CourseVidio();
                                       }));
                                     },
                                     child: Padding(
@@ -156,7 +155,7 @@ class DetaliesScreen1 extends StatelessWidget {
                                                     kTextColor.withOpacity(.25),
                                                 fontWeight: FontWeight.bold),
                                           ),
-                                          SizedBox(
+                                          const SizedBox(
                                             width: 10,
                                           ),
                                           RichText(
@@ -183,7 +182,7 @@ class DetaliesScreen1 extends StatelessWidget {
                                               ],
                                             ),
                                           ),
-                                          Spacer(),
+                                          const Spacer(),
                                           Container(
                                               height: 40,
                                               width: 40,
@@ -199,7 +198,7 @@ class DetaliesScreen1 extends StatelessWidget {
                                                   onPressed: () {
                                                     Navigator.pop(context);
                                                   },
-                                                  icon: Icon(
+                                                  icon: const Icon(
                                                     Icons.play_arrow,
                                                     color: Colors.white,
                                                   )))
@@ -209,7 +208,7 @@ class DetaliesScreen1 extends StatelessWidget {
                                   );
                                 }),
                           ),
-                          SizedBox(
+                          const SizedBox(
                             height: 40,
                           )
                         ],
@@ -225,7 +224,7 @@ class DetaliesScreen1 extends StatelessWidget {
                         decoration: BoxDecoration(
                           boxShadow: [
                             BoxShadow(
-                              offset: Offset(0, 4),
+                              offset: const Offset(0, 4),
                               blurRadius: 50,
                               color: kTextColor.withOpacity(.1),
                             ),
@@ -238,9 +237,9 @@ class DetaliesScreen1 extends StatelessWidget {
                             InkWell(
                               onTap: () {},
                               child: Container(
-                                margin: EdgeInsets.only(
+                                margin: const EdgeInsets.only(
                                     left: 20, bottom: 10, right: 25),
-                                padding: EdgeInsets.all(13),
+                                padding: const EdgeInsets.all(13),
                                 height: 65,
                                 width: 100,
                                 decoration: BoxDecoration(
@@ -251,7 +250,8 @@ class DetaliesScreen1 extends StatelessWidget {
                               ),
                             ),
                             Container(
-                              margin: EdgeInsets.only(bottom: 10, right: 20),
+                              margin:
+                                  const EdgeInsets.only(bottom: 10, right: 20),
                               width: 240,
                               height: 65,
                               decoration: BoxDecoration(
@@ -260,7 +260,7 @@ class DetaliesScreen1 extends StatelessWidget {
                               ),
                               child: TextButton(
                                 onPressed: () {},
-                                child: Text(
+                                child: const Text(
                                   "Buy Now",
                                   style: TextStyle(
                                       color: Colors.white, fontSize: 20),
@@ -282,7 +282,7 @@ class DetaliesScreen1 extends StatelessWidget {
           child: FloatingActionButton12(
             press: () {
               Navigator.push(context, MaterialPageRoute(builder: (context) {
-                return HomeScreen();
+                return const HomeScreen();
               }));
             },
           ),
@@ -318,7 +318,7 @@ class CourseVidio extends StatelessWidget {
       backgroundColor: Colors.white,
       appBar: AppBar(
         backgroundColor: Colors.white,
-        title: Text("Course vidio"),
+        title: const Text("Course vidio"),
       ),
     );
   }

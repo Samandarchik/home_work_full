@@ -11,12 +11,12 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       theme: ThemeData(
         scaffoldBackgroundColor: Colors.white,
-        floatingActionButtonTheme: FloatingActionButtonThemeData(
+        floatingActionButtonTheme: const FloatingActionButtonThemeData(
             backgroundColor: Color.fromARGB(255, 244, 67, 54),
             foregroundColor: Colors.white),
       ),
       debugShowCheckedModeBanner: false,
-      home: HomePage1(),
+      home: const HomePage1(),
     );
   }
 }

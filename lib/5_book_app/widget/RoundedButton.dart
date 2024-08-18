@@ -17,14 +17,14 @@ class RoundedButton extends StatelessWidget {
     return GestureDetector(
       onTap: press,
       child: Container(
-        margin: EdgeInsets.symmetric(vertical: 20),
+        margin: const EdgeInsets.symmetric(vertical: 20),
         padding:
             EdgeInsets.symmetric(horizontal: 30, vertical: verticalPadding),
         decoration: BoxDecoration(boxShadow: [
           BoxShadow(
-              offset: Offset(0, 3),
+              offset: const Offset(0, 3),
               blurRadius: 20,
-              color: Color(0xFF666666).withOpacity(.3))
+              color: const Color(0xFF666666).withOpacity(.3))
         ], color: Colors.white, borderRadius: BorderRadius.circular(30)),
         child: Text(
           text1,

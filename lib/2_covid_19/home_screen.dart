@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:home_work_full/2_covid_19/color.dart';
@@ -32,17 +31,18 @@ class _HomeScreenState extends State<HomeScreen> {
           scrollDirection: Axis.vertical,
           child: Column(
             children: [
-              MyHeader(
+              const MyHeader(
                   images: "assets/icons/Drcorona.svg",
                   textTop: "All you need",
                   textBottom: "is stay at home"),
               Container(
-                margin: EdgeInsets.symmetric(horizontal: 20),
-                padding: EdgeInsets.symmetric(vertical: 10, horizontal: 20),
+                margin: const EdgeInsets.symmetric(horizontal: 20),
+                padding:
+                    const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
                 height: 60,
                 width: double.infinity,
                 decoration: BoxDecoration(
-                  border: Border.all(color: Color(0xFFE5E5E5)),
+                  border: Border.all(color: const Color(0xFFE5E5E5)),
                   borderRadius: BorderRadius.circular(25),
                 ),
                 child: Row(
@@ -56,7 +56,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         dropdownColor: Colors.white,
                         icon: SvgPicture.asset("assets/icons/dropdown.svg"),
                         isExpanded: true,
-                        underline: SizedBox(),
+                        underline: const SizedBox(),
                         value: _selectedItem,
                         items: _dropDownItems.map((String item) {
                           return DropdownMenuItem(
@@ -75,16 +75,16 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
               ),
               Padding(
-                padding: EdgeInsets.symmetric(horizontal: 20),
+                padding: const EdgeInsets.symmetric(horizontal: 20),
                 child: Column(
                   children: [
-                    SizedBox(
+                    const SizedBox(
                       height: 10,
                     ),
                     Row(
                       children: [
                         RichText(
-                          text: TextSpan(
+                          text: const TextSpan(
                             children: [
                               TextSpan(
                                   text: "Case Update\n",
@@ -95,8 +95,8 @@ class _HomeScreenState extends State<HomeScreen> {
                             ],
                           ),
                         ),
-                        Spacer(),
-                        Text(
+                        const Spacer(),
+                        const Text(
                           "See details",
                           style: TextStyle(
                               color: kPrimaryColor,
@@ -104,23 +104,23 @@ class _HomeScreenState extends State<HomeScreen> {
                         )
                       ],
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 20,
                     ),
                     Container(
-                      padding: EdgeInsets.all(20),
+                      padding: const EdgeInsets.all(20),
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(20),
                         color: Colors.white,
                         boxShadow: [
                           BoxShadow(
-                            offset: Offset(0, 4),
+                            offset: const Offset(0, 4),
                             blurRadius: 30,
                             color: kShadowColor,
                           ),
                         ],
                       ),
-                      child: Row(
+                      child: const Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Counter(
@@ -138,10 +138,10 @@ class _HomeScreenState extends State<HomeScreen> {
                         ],
                       ),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 20,
                     ),
-                    Row(
+                    const Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Text(
@@ -157,8 +157,8 @@ class _HomeScreenState extends State<HomeScreen> {
                       ],
                     ),
                     Container(
-                      margin: EdgeInsets.only(top: 20),
-                      padding: EdgeInsets.all(20),
+                      margin: const EdgeInsets.only(top: 20),
+                      padding: const EdgeInsets.all(20),
                       height: 178,
                       width: double.infinity,
                       decoration: BoxDecoration(
@@ -166,7 +166,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           borderRadius: BorderRadius.circular(20),
                           boxShadow: [
                             BoxShadow(
-                                offset: Offset(0, 10),
+                                offset: const Offset(0, 10),
                                 blurRadius: 30,
                                 color: kShadowColor)
                           ]),
@@ -184,7 +184,7 @@ class _HomeScreenState extends State<HomeScreen> {
         floatingActionButton: FloatingActionButton12(
           press: () {
             Navigator.push(context, MaterialPageRoute(builder: (context) {
-              return InfoScreen();
+              return const InfoScreen();
             }));
           },
         ));

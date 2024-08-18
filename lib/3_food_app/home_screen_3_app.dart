@@ -17,7 +17,7 @@ class HomeScreen3App extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Padding(
-            padding: EdgeInsets.only(right: 20, top: 50),
+            padding: const EdgeInsets.only(right: 20, top: 50),
             child: Align(
               alignment: Alignment.topRight,
               child: SvgPicture.asset(
@@ -36,7 +36,7 @@ class HomeScreen3App extends StatelessWidget {
                   ?.copyWith(fontWeight: FontWeight.w600),
             ),
           ),
-          SingleChildScrollView(
+          const SingleChildScrollView(
             scrollDirection: Axis.horizontal,
             child: Row(
               children: [
@@ -57,8 +57,8 @@ class HomeScreen3App extends StatelessWidget {
             ),
           ),
           Container(
-            margin: EdgeInsets.all(20),
-            padding: EdgeInsets.symmetric(
+            margin: const EdgeInsets.all(20),
+            padding: const EdgeInsets.symmetric(
               horizontal: 20,
             ),
             height: 50,
@@ -67,7 +67,7 @@ class HomeScreen3App extends StatelessWidget {
               borderRadius: BorderRadius.circular(20),
             ),
             child: TextFormField(
-              decoration: InputDecoration(
+              decoration: const InputDecoration(
                   icon: Icon(CupertinoIcons.search),
                   hintText: "Search",
                   border: InputBorder.none),
@@ -81,7 +81,7 @@ class HomeScreen3App extends StatelessWidget {
                     press: () {
                       Navigator.push(context,
                           MaterialPageRoute(builder: (context) {
-                        return DetailsScreen3();
+                        return const DetailsScreen3();
                       }));
                     },
                     title: "Vegan salad bowl",
@@ -100,7 +100,7 @@ class HomeScreen3App extends StatelessWidget {
                     calories: 420,
                     description:
                         "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin"),
-                SizedBox(
+                const SizedBox(
                   width: 40,
                 )
               ],
@@ -115,19 +115,19 @@ class HomeScreen3App extends StatelessWidget {
           Container(),
           FloatingActionButton12(press: () {
             Navigator.push(context, MaterialPageRoute(builder: (context) {
-              return DetailsScreen3();
+              return const DetailsScreen3();
             }));
           }),
           Container(
-            padding: EdgeInsets.all(10),
+            padding: const EdgeInsets.all(10),
             height: 80,
             width: 80,
             decoration: BoxDecoration(
                 shape: BoxShape.circle, color: kPrimaryColor.withOpacity(.4)),
             child: Container(
-              padding: EdgeInsets.all(20),
-              decoration:
-                  BoxDecoration(shape: BoxShape.circle, color: kPrimaryColor),
+              padding: const EdgeInsets.all(20),
+              decoration: const BoxDecoration(
+                  shape: BoxShape.circle, color: kPrimaryColor),
               child: SvgPicture.asset("assets/icons/plus.svg"),
             ),
           ),

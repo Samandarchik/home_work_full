@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:home_work_full/5_book_app/color.dart';
 import 'package:home_work_full/5_book_app/widget/RoundedButton.dart';
 import 'package:home_work_full/5_book_app/widget/book_reating.dart';
-import 'package:home_work_full/6_Meditation_app/home_screen6.dart';
 
 class InfoScreen extends StatelessWidget {
   const InfoScreen({super.key});
@@ -20,7 +19,7 @@ class InfoScreen extends StatelessWidget {
                 Container(
                   height: size.height * .4,
                   width: double.infinity,
-                  decoration: BoxDecoration(
+                  decoration: const BoxDecoration(
                       image: DecorationImage(
                           image: AssetImage("assets/images/bg.png"),
                           fit: BoxFit.fitWidth),
@@ -32,62 +31,42 @@ class InfoScreen extends StatelessWidget {
                     child: Column(
                       children: [
                         SizedBox(
-                          height: size.height * .1,
+                          height: size.height * .06,
                         ),
-                        BookInfo(),
+                        const BookInfo(),
                       ],
                     ),
                   ),
                 ),
                 Padding(
-                  padding: EdgeInsets.only(top: size.height * .4 - 30),
+                  padding: EdgeInsets.only(top: size.height * .37),
                   child: Column(
                     children: [
                       ChapterCard(
-                        press: () {
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => HomeScreen6()));
-                        },
+                        press: () {},
                         name: "Money",
                         tag: "Lise is about change",
                         chapterNumber: 1,
                       ),
                       ChapterCard(
-                        press: () {
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => HomeScreen6()));
-                        },
+                        press: () {},
                         name: "Power",
                         tag: "Everything loves power",
                         chapterNumber: 2,
                       ),
                       ChapterCard(
-                        press: () {
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => HomeScreen6()));
-                        },
+                        press: () {},
                         name: "Influence",
                         tag: "Influence easily like never before",
                         chapterNumber: 3,
                       ),
                       ChapterCard(
-                        press: () {
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => HomeScreen6()));
-                        },
+                        press: () {},
                         name: "Win",
                         tag: "Winning is what matters",
                         chapterNumber: 4,
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 10,
                       ),
                       Padding(
@@ -96,7 +75,7 @@ class InfoScreen extends StatelessWidget {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             RichText(
-                                text: TextSpan(
+                                text: const TextSpan(
                                     style: TextStyle(
                                         color: Colors.black, fontSize: 25),
                                     children: [
@@ -108,7 +87,7 @@ class InfoScreen extends StatelessWidget {
                                 ])),
                             Stack(
                               children: [
-                                Container(
+                                const SizedBox(
                                   height: 180,
                                   width: double.infinity,
                                 ),
@@ -117,18 +96,18 @@ class InfoScreen extends StatelessWidget {
                                   left: 0,
                                   right: 0,
                                   child: Container(
-                                    padding: EdgeInsets.only(
+                                    padding: const EdgeInsets.only(
                                         left: 24, top: 20, right: 150),
                                     height: 160,
                                     width: double.infinity,
                                     decoration: BoxDecoration(
-                                        color: Color(0xFFFFF8F9),
+                                        color: const Color(0xFFFFF8F9),
                                         borderRadius:
                                             BorderRadius.circular(29)),
                                     child: Column(
                                       children: [
                                         RichText(
-                                          text: TextSpan(
+                                          text: const TextSpan(
                                             style: TextStyle(
                                               color: Colors.black,
                                             ),
@@ -146,20 +125,14 @@ class InfoScreen extends StatelessWidget {
                                           ),
                                         ),
                                         Row(children: [
-                                          BookRating(rating: 4.8),
-                                          SizedBox(
+                                          const BookRating(rating: 4.8),
+                                          const SizedBox(
                                             width: 20,
                                           ),
                                           Expanded(
                                               child: RoundedButton(
                                                   text1: "Read",
-                                                  press: () {
-                                                    Navigator.push(
-                                                        context,
-                                                        MaterialPageRoute(
-                                                            builder: (context) =>
-                                                                HomeScreen6()));
-                                                  },
+                                                  press: () {},
                                                   verticalPadding: 8))
                                         ])
                                       ],
@@ -176,7 +149,7 @@ class InfoScreen extends StatelessWidget {
                                 ),
                               ],
                             ),
-                            SizedBox(
+                            const SizedBox(
                               height: 50,
                             ),
                           ],
@@ -212,13 +185,14 @@ class ChapterCard extends StatelessWidget {
     Size size = MediaQuery.of(context).size;
     return Container(
       width: size.width - 48,
-      margin: EdgeInsets.only(bottom: 16),
-      padding: EdgeInsets.symmetric(vertical: 20, horizontal: 30),
+      margin: const EdgeInsets.only(bottom: 16),
+      padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 30),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(38.5),
         color: Colors.white,
         boxShadow: [
-          BoxShadow(offset: Offset(0, 10), blurRadius: 33, color: kShadowColor5)
+          BoxShadow(
+              offset: const Offset(0, 10), blurRadius: 33, color: kShadowColor5)
         ],
       ),
       child: Row(
@@ -228,22 +202,22 @@ class ChapterCard extends StatelessWidget {
               children: [
                 TextSpan(
                   text: "Chapter $chapterNumber : $name\n",
-                  style: TextStyle(
+                  style: const TextStyle(
                       fontSize: 16,
                       color: kBlackColor,
                       fontWeight: FontWeight.bold),
                 ),
                 TextSpan(
-                  text: "$tag",
-                  style: TextStyle(color: kLightBlackColor),
+                  text: tag,
+                  style: const TextStyle(color: kLightBlackColor),
                 ),
               ],
             ),
           ),
-          Spacer(),
+          const Spacer(),
           IconButton(
             onPressed: press,
-            icon: Icon(
+            icon: const Icon(
               Icons.arrow_forward_ios,
               size: 18,
             ),
@@ -267,7 +241,7 @@ class BookInfo extends StatelessWidget {
             child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text(
+            const Text(
               "Crushing &",
               style: head,
             ),
@@ -275,7 +249,7 @@ class BookInfo extends StatelessWidget {
               "Influence",
               style: head.copyWith(fontWeight: FontWeight.bold),
             ),
-            SizedBox(
+            const SizedBox(
               height: 5,
             ),
             Row(
@@ -290,7 +264,7 @@ class BookInfo extends StatelessWidget {
                               fontSize: 10,
                               color: Colors.black.withOpacity(.7)),
                           "When the earth was flat andeveryone wanted to win the gameol the best and people and winning with an A game with all the things you have"),
-                      SizedBox(
+                      const SizedBox(
                         height: 5,
                       ),
                       RoundedButton(
@@ -301,8 +275,9 @@ class BookInfo extends StatelessWidget {
                 Column(
                   children: [
                     IconButton(
-                        onPressed: () {}, icon: Icon(Icons.favorite_border)),
-                    BookRating(rating: 4.9)
+                        onPressed: () {},
+                        icon: const Icon(Icons.favorite_border)),
+                    const BookRating(rating: 4.9)
                   ],
                 )
               ],

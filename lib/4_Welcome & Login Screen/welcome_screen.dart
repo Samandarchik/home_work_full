@@ -15,7 +15,7 @@ class WelcomeScreen extends StatelessWidget {
           Expanded(
             flex: 3,
             child: Container(
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
                   image: DecorationImage(
                       fit: BoxFit.cover,
                       image: AssetImage("assets/images/perosn.jpeg"))),
@@ -41,17 +41,18 @@ class WelcomeScreen extends StatelessWidget {
               GestureDetector(
                 onTap: () {
                   Navigator.push(context, MaterialPageRoute(builder: (context) {
-                    return SignIn();
+                    return const SignIn();
                   }));
                 },
                 child: FittedBox(
                   child: Container(
                     margin: EdgeInsets.only(bottom: size.width * .10),
-                    padding: EdgeInsets.symmetric(horizontal: 16, vertical: 15),
+                    padding: const EdgeInsets.symmetric(
+                        horizontal: 16, vertical: 15),
                     decoration: BoxDecoration(
                         color: kPrimaryColor,
                         borderRadius: BorderRadius.circular(50)),
-                    child: Row(
+                    child: const Row(
                       children: [
                         Text(
                           "START LEARNING",

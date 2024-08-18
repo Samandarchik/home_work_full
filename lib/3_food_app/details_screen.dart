@@ -13,13 +13,13 @@ class DetailsScreen3 extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.white,
       body: Padding(
-        padding: EdgeInsets.only(top: 50, left: 20, right: 20),
+        padding: const EdgeInsets.only(top: 50, left: 20, right: 20),
         child: Column(
           children: [
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Icon(
+                const Icon(
                   Icons.arrow_back_ios,
                 ),
                 SvgPicture.asset(
@@ -29,14 +29,14 @@ class DetailsScreen3 extends StatelessWidget {
               ],
             ),
             Container(
-              margin: EdgeInsets.symmetric(vertical: 20),
-              padding: EdgeInsets.all(6),
+              margin: const EdgeInsets.symmetric(vertical: 20),
+              padding: const EdgeInsets.all(6),
               height: 305,
               width: 305,
-              decoration:
-                  BoxDecoration(color: kSecondaryColor, shape: BoxShape.circle),
+              decoration: const BoxDecoration(
+                  color: kSecondaryColor, shape: BoxShape.circle),
               child: Container(
-                decoration: BoxDecoration(
+                decoration: const BoxDecoration(
                     image: DecorationImage(
                         image: AssetImage("assets/images/image_1_big.png"),
                         fit: BoxFit.cover)),
@@ -46,7 +46,7 @@ class DetailsScreen3 extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 RichText(
-                    text: TextSpan(children: [
+                    text: const TextSpan(children: [
                   TextSpan(
                     text: "Vegan salad bowl\n",
                     style: TextStyle(
@@ -59,7 +59,7 @@ class DetailsScreen3 extends StatelessWidget {
                       text: "With red tomato",
                       style: TextStyle(color: Colors.black54))
                 ])),
-                Text(
+                const Text(
                   "\$20",
                   style: TextStyle(
                       fontWeight: FontWeight.bold,
@@ -68,12 +68,12 @@ class DetailsScreen3 extends StatelessWidget {
                 )
               ],
             ),
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
-            Text(
+            const Text(
                 "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source."),
-            Spacer(),
+            const Spacer(),
             Padding(
               padding: const EdgeInsets.only(bottom: 20.0),
               child: Row(
@@ -88,7 +88,7 @@ class DetailsScreen3 extends StatelessWidget {
                     ),
                     child: TextButton(
                         onPressed: () {},
-                        child: Row(
+                        child: const Row(
                           mainAxisAlignment: MainAxisAlignment.spaceAround,
                           children: [
                             Text(
@@ -105,15 +105,15 @@ class DetailsScreen3 extends StatelessWidget {
                   Stack(
                     children: [
                       Container(
-                        padding: EdgeInsets.all(12),
+                        padding: const EdgeInsets.all(12),
                         height: 90,
                         width: 90,
                         decoration: BoxDecoration(
                             color: kPrimaryColor.withOpacity(.4),
                             shape: BoxShape.circle),
                         child: Container(
-                          padding: EdgeInsets.all(15),
-                          decoration: BoxDecoration(
+                          padding: const EdgeInsets.all(15),
+                          decoration: const BoxDecoration(
                               shape: BoxShape.circle, color: kPrimaryColor),
                           child: SvgPicture.asset("assets/icons/bag.svg"),
                         ),
@@ -124,9 +124,9 @@ class DetailsScreen3 extends StatelessWidget {
                           child: Container(
                             height: 30,
                             width: 30,
-                            decoration: BoxDecoration(
+                            decoration: const BoxDecoration(
                                 color: Colors.white, shape: BoxShape.circle),
-                            child: Center(
+                            child: const Center(
                                 child: Text(
                               "0",
                               style: TextStyle(color: kPrimaryColor),
@@ -144,7 +144,7 @@ class DetailsScreen3 extends StatelessWidget {
         padding: const EdgeInsets.only(bottom: 100.0),
         child: FloatingActionButton12(press: () {
           Navigator.push(context, MaterialPageRoute(builder: (context) {
-            return WelcomeScreen();
+            return const WelcomeScreen();
           }));
         }),
       ),

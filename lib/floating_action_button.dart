@@ -25,12 +25,12 @@ class FloatingActionButton12 extends StatelessWidget {
                   decoration: BoxDecoration(
                       color: Colors.red,
                       borderRadius: BorderRadius.circular(12)),
-                  child: Icon(
+                  child: const Icon(
                     Icons.arrow_back_ios,
                     color: Colors.white,
                   ),
                 )),
-            SizedBox(
+            const SizedBox(
               width: 20,
             ),
             InkWell(
@@ -41,7 +41,7 @@ class FloatingActionButton12 extends StatelessWidget {
                   decoration: BoxDecoration(
                       color: Colors.green,
                       borderRadius: BorderRadius.circular(12)),
-                  child: Icon(
+                  child: const Icon(
                     CupertinoIcons.right_chevron,
                     color: Colors.white,
                   ),
@@ -77,12 +77,12 @@ class FloatingActionButton1 extends StatelessWidget {
                   decoration: BoxDecoration(
                       color: Colors.red,
                       borderRadius: BorderRadius.circular(12)),
-                  child: Icon(
+                  child: const Icon(
                     Icons.arrow_back_ios,
                     color: Colors.white,
                   ),
                 )),
-            SizedBox(
+            const SizedBox(
               width: 20,
             ),
             InkWell(
@@ -93,7 +93,7 @@ class FloatingActionButton1 extends StatelessWidget {
                   decoration: BoxDecoration(
                       color: Colors.green,
                       borderRadius: BorderRadius.circular(12)),
-                  child: Icon(
+                  child: const Icon(
                     CupertinoIcons.right_chevron,
                     color: Colors.white,
                   ),

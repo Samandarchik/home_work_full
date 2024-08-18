@@ -9,24 +9,26 @@ class BookRating extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.symmetric(vertical: 8, horizontal: 6),
+      padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 6),
       decoration: BoxDecoration(
           color: Colors.white,
           borderRadius: BorderRadius.circular(16),
           boxShadow: [
             BoxShadow(
-                offset: Offset(3, 7), blurRadius: 20, color: kShadowColor5)
+                offset: const Offset(3, 7),
+                blurRadius: 20,
+                color: kShadowColor5)
           ]),
       child: Column(
         children: [
-          Icon(
+          const Icon(
             Icons.star,
             color: kIconColoil,
             size: 15,
           ),
           Text(
             "$rating",
-            style: TextStyle(fontSize: 12, fontWeight: FontWeight.bold),
+            style: const TextStyle(fontSize: 12, fontWeight: FontWeight.bold),
           )
         ],
       ),

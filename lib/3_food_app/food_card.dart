@@ -25,7 +25,7 @@ class FoodCard extends StatelessWidget {
     return GestureDetector(
       onTap: press,
       child: Container(
-        margin: EdgeInsets.only(left: 20),
+        margin: const EdgeInsets.only(left: 20),
         height: 400,
         width: 270,
         child: Stack(
@@ -67,7 +67,7 @@ class FoodCard extends StatelessWidget {
               top: 80,
               child: Text(
                 "\$$price",
-                style: TextStyle(
+                style: const TextStyle(
                     fontWeight: FontWeight.w800,
                     fontSize: 22,
                     color: kPrimaryColor),
@@ -76,14 +76,14 @@ class FoodCard extends StatelessWidget {
             Positioned(
                 top: 200,
                 left: 40,
-                child: Container(
+                child: SizedBox(
                   width: 210,
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
                         title,
-                        style: TextStyle(
+                        style: const TextStyle(
                             fontWeight: FontWeight.w800, fontSize: 20),
                       ),
                       Text(
@@ -91,7 +91,7 @@ class FoodCard extends StatelessWidget {
                         style: TextStyle(
                             fontSize: 16, color: kTextColor.withOpacity(.4)),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 16,
                       ),
                       Text(
@@ -99,7 +99,7 @@ class FoodCard extends StatelessWidget {
                         maxLines: 3,
                         style: TextStyle(color: kTextColor.withOpacity(.65)),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 16,
                       ),
                       Text("$calories Kcal")

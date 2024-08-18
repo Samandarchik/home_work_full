@@ -13,7 +13,7 @@ class HomePage1 extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Padding(
-        padding: EdgeInsets.only(
+        padding: const EdgeInsets.only(
           left: 20,
           top: 50,
           right: 20,
@@ -28,41 +28,41 @@ class HomePage1 extends StatelessWidget {
                 Image.asset("assets/images/user.png")
               ],
             ),
-            SizedBox(
+            const SizedBox(
               height: 30,
             ),
-            Text(
+            const Text(
               "Hey Samandar",
               style: kHeadingextStyle,
             ),
-            Text(
+            const Text(
               "Find a course you want to learn",
               style: kSubheadingextStyle,
             ),
-            SizedBox(
+            const SizedBox(
               height: 30,
             ),
             Container(
-              margin: EdgeInsets.symmetric(vertical: 20),
-              padding: EdgeInsets.symmetric(horizontal: 20, vertical: 16),
+              margin: const EdgeInsets.symmetric(vertical: 20),
+              padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 16),
               height: 60,
               width: double.infinity,
               decoration: BoxDecoration(
-                  color: Color(0xFFF5F5F7),
+                  color: const Color(0xFFF5F5F7),
                   borderRadius: BorderRadius.circular(40)),
               child: TextFormField(
                 decoration: InputDecoration(
                     icon: SvgPicture.asset("assets/icons/search.svg"),
                     hintText: "Search for anything",
                     hintStyle:
-                        TextStyle(color: Color(0xFFABA5BD), fontSize: 18),
+                        const TextStyle(color: Color(0xFFABA5BD), fontSize: 18),
                     border: InputBorder.none),
               ),
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text(
+                const Text(
                   "Categary",
                   style: kHeadingextStyle,
                 ),
@@ -74,23 +74,24 @@ class HomePage1 extends StatelessWidget {
             ),
             Expanded(
               child: MasonryGridView.builder(
-                padding: EdgeInsets.only(top: 20),
+                padding: const EdgeInsets.only(top: 20),
                 mainAxisSpacing: 20,
                 crossAxisSpacing: 20,
                 itemCount: categoryList.length,
-                gridDelegate: SliverSimpleGridDelegateWithFixedCrossAxisCount(
-                    crossAxisCount: 2),
+                gridDelegate:
+                    const SliverSimpleGridDelegateWithFixedCrossAxisCount(
+                        crossAxisCount: 2),
                 itemBuilder: (context, index) {
                   Category category = categoryList[index];
                   return InkWell(
                     onTap: () {
                       Navigator.push(context,
                           MaterialPageRoute(builder: (context) {
-                        return DetaliesScreen1();
+                        return const DetaliesScreen1();
                       }));
                     },
                     child: Container(
-                      padding: EdgeInsets.all(20),
+                      padding: const EdgeInsets.all(20),
                       height: index.isEven ? 200 : 240,
                       decoration: BoxDecoration(
                         image: DecorationImage(
@@ -124,9 +125,9 @@ class HomePage1 extends StatelessWidget {
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           Navigator.push(context,
-              MaterialPageRoute(builder: (context) => DetaliesScreen1()));
+              MaterialPageRoute(builder: (context) => const DetaliesScreen1()));
         },
-        child: Icon(
+        child: const Icon(
           CupertinoIcons.right_chevron,
         ),
       ),

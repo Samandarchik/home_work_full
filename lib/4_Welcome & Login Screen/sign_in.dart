@@ -13,7 +13,7 @@ class SignIn extends StatelessWidget {
         children: [
           Expanded(
               child: Container(
-            decoration: BoxDecoration(
+            decoration: const BoxDecoration(
                 image: DecorationImage(
                     fit: BoxFit.cover,
                     image: AssetImage("assets/images/perosn.jpeg"))),
@@ -22,7 +22,7 @@ class SignIn extends StatelessWidget {
             flex: 2,
             child: Column(
               children: [
-                Row(
+                const Row(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
                     Text("SIGN IN", style: stiletext),
@@ -35,7 +35,7 @@ class SignIn extends StatelessWidget {
                     )
                   ],
                 ),
-                Spacer(),
+                const Spacer(),
                 Column(
                   children: [
                     Container(
@@ -46,7 +46,7 @@ class SignIn extends StatelessWidget {
                         child: kflo1)
                   ],
                 ),
-                Spacer(),
+                const Spacer(),
                 Padding(
                   padding:
                       const EdgeInsets.only(bottom: 20.0, right: 20, left: 20),
@@ -64,7 +64,7 @@ class SignIn extends StatelessWidget {
                           size: 60,
                         ),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         width: 20,
                       ),
                       Container(
@@ -79,7 +79,7 @@ class SignIn extends StatelessWidget {
                           size: 60,
                         ),
                       ),
-                      Spacer(),
+                      const Spacer(),
                       IconButton(
                           onPressed: () {
                             Navigator.push(context,
@@ -88,10 +88,10 @@ class SignIn extends StatelessWidget {
                             }));
                           },
                           icon: Container(
-                            padding: EdgeInsets.all(20),
-                            decoration: BoxDecoration(
+                            padding: const EdgeInsets.all(20),
+                            decoration: const BoxDecoration(
                                 color: kPrimaryColor, shape: BoxShape.circle),
-                            child: Icon(
+                            child: const Icon(
                               Icons.arrow_forward_ios,
                               size: 20,
                             ),

@@ -12,7 +12,7 @@ class WelcomeScreen extends StatelessWidget {
     return Scaffold(
       body: Container(
         width: double.infinity,
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
           image: DecorationImage(
               image: AssetImage("assets/images/Bitmap.png"), fit: BoxFit.fill),
         ),
@@ -20,7 +20,7 @@ class WelcomeScreen extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             RichText(
-              text: TextSpan(
+              text: const TextSpan(
                 style: TextStyle(color: Colors.black54, fontSize: 40),
                 children: [
                   TextSpan(
@@ -39,7 +39,7 @@ class WelcomeScreen extends StatelessWidget {
                 text1: "start reading",
                 press: () {
                   Navigator.push(context, MaterialPageRoute(builder: (context) {
-                    return HomeScreen5();
+                    return const HomeScreen5();
                   }));
                 },
                 verticalPadding: 24,
@@ -50,7 +50,7 @@ class WelcomeScreen extends StatelessWidget {
                 onPressed: () {
                   exit(0);
                 },
-                child: Text(
+                child: const Text(
                   "Exit",
                   style: TextStyle(fontSize: 29),
                 ))
@@ -58,8 +58,8 @@ class WelcomeScreen extends StatelessWidget {
         ),
       ),
       floatingActionButton: FloatingActionButton12(press: () {
-        Navigator.push(
-            context, MaterialPageRoute(builder: (context) => HomeScreen5()));
+        Navigator.push(context,
+            MaterialPageRoute(builder: (context) => const HomeScreen5()));
       }),
     );
   }

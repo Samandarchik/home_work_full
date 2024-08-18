@@ -15,7 +15,7 @@ class HomeScreen5 extends StatelessWidget {
     return Scaffold(
       body: Container(
         width: double.infinity,
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
           image: DecorationImage(
             alignment: Alignment.topCenter,
             fit: BoxFit.fitWidth,
@@ -32,7 +32,7 @@ class HomeScreen5 extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 24.0),
                 child: RichText(
-                  text: TextSpan(
+                  text: const TextSpan(
                     style: TextStyle(color: Colors.black, fontSize: 40),
                     children: [
                       TextSpan(text: "What are you \nreading "),
@@ -43,7 +43,7 @@ class HomeScreen5 extends StatelessWidget {
                   ),
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 30,
               ),
               SingleChildScrollView(
@@ -59,7 +59,7 @@ class HomeScreen5 extends StatelessWidget {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => InfoScreen()));
+                                  builder: (context) => const InfoScreen()));
                         },
                         pressRead: () {}),
                     ReadingListCard(
@@ -69,19 +69,19 @@ class HomeScreen5 extends StatelessWidget {
                         rating: 4.8,
                         pressDetails: () {},
                         pressRead: () {}),
-                    SizedBox(
+                    const SizedBox(
                       width: 30,
                     )
                   ],
                 ),
               ),
               Padding(
-                padding: EdgeInsets.symmetric(horizontal: 24),
+                padding: const EdgeInsets.symmetric(horizontal: 24),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     RichText(
-                      text: TextSpan(
+                      text: const TextSpan(
                         style: head,
                         children: [
                           TextSpan(text: "Best of the "),
@@ -94,7 +94,7 @@ class HomeScreen5 extends StatelessWidget {
                     ),
                     bestOfTheDayCard(size),
                     RichText(
-                      text: TextSpan(
+                      text: const TextSpan(
                         style: head,
                         children: [
                           TextSpan(text: "Continue "),
@@ -104,7 +104,7 @@ class HomeScreen5 extends StatelessWidget {
                         ],
                       ),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 30,
                     ),
                     Container(
@@ -115,7 +115,7 @@ class HomeScreen5 extends StatelessWidget {
                         color: Colors.white,
                         boxShadow: [
                           BoxShadow(
-                              offset: Offset(0, 10),
+                              offset: const Offset(0, 10),
                               blurRadius: 33,
                               color: kshadovColor),
                         ],
@@ -131,7 +131,7 @@ class HomeScreen5 extends StatelessWidget {
                                   const EdgeInsets.only(right: 20, left: 30),
                               child: Row(
                                 children: [
-                                  Expanded(
+                                  const Expanded(
                                     child: Column(
                                       mainAxisAlignment: MainAxisAlignment.end,
                                       crossAxisAlignment:
@@ -175,7 +175,7 @@ class HomeScreen5 extends StatelessWidget {
                         ),
                       ),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 40,
                     )
                   ],
@@ -186,15 +186,15 @@ class HomeScreen5 extends StatelessWidget {
         ),
       ),
       floatingActionButton: FloatingActionButton12(press: () {
-        Navigator.push(
-            context, MaterialPageRoute(builder: (context) => InfoScreen()));
+        Navigator.push(context,
+            MaterialPageRoute(builder: (context) => const InfoScreen()));
       }),
     );
   }
 
   Container bestOfTheDayCard(Size size) {
     return Container(
-      margin: EdgeInsets.symmetric(vertical: 20),
+      margin: const EdgeInsets.symmetric(vertical: 20),
       width: double.infinity,
       height: 205,
       child: Stack(
@@ -210,9 +210,9 @@ class HomeScreen5 extends StatelessWidget {
               width: double.infinity,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(29),
-                color: Color(0xFFEAEAEA).withOpacity(.45),
+                color: const Color(0xFFEAEAEA).withOpacity(.45),
               ),
-              child: Column(
+              child: const Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(

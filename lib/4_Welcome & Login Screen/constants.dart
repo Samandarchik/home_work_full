@@ -5,14 +5,14 @@ const kPrimaryColor = Color(0xFFFFBD73);
 const stiletext =
     TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 35);
 final kflo = TextFormField(
-  style: TextStyle(color: Colors.white),
+  style: const TextStyle(color: Colors.white),
   cursorColor: Colors.white,
   decoration: InputDecoration(
       focusColor: Colors.white,
-      focusedBorder: UnderlineInputBorder(
+      focusedBorder: const UnderlineInputBorder(
         borderSide: BorderSide(color: Colors.white),
       ),
-      icon: Icon(
+      icon: const Icon(
         Icons.alternate_email,
         color: kPrimaryColor,
       ),
@@ -23,14 +23,14 @@ final kflo = TextFormField(
 
 final kflo1 = TextFormField(
   obscureText: true,
-  style: TextStyle(color: Colors.white),
+  style: const TextStyle(color: Colors.white),
   cursorColor: Colors.white,
   decoration: InputDecoration(
       focusColor: Colors.white,
-      focusedBorder: UnderlineInputBorder(
+      focusedBorder: const UnderlineInputBorder(
         borderSide: BorderSide(color: Colors.white),
       ),
-      icon: Icon(
+      icon: const Icon(
         Icons.password,
         color: kPrimaryColor,
       ),

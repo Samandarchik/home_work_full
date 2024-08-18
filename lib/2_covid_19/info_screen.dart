@@ -17,21 +17,21 @@ class InfoScreen extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              MyHeader(
+              const MyHeader(
                 images: "assets/icons/coronadr.svg",
                 textTop: "Get to know",
                 textBottom: "About Covid-19.",
               ),
               Padding(
-                padding: EdgeInsets.symmetric(horizontal: 20),
+                padding: const EdgeInsets.symmetric(horizontal: 20),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(
+                    const Text(
                       "Symptoms",
                       style: kTitleTextStyle,
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 20,
                     ),
                     Row(
@@ -54,19 +54,19 @@ class InfoScreen extends StatelessWidget {
                         ),
                       ],
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 20,
                     ),
-                    PreventCard(
+                    const PreventCard(
                       images: "assets/images/wear_mask.png",
                       title:
                           "Since the start of the coronavirus outbreak some places have fully embraced wearing facemasks",
                       text: "Wear face mask",
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 20,
                     ),
-                    PreventCard(
+                    const PreventCard(
                       images: "assets/images/wash_hands.png",
                       title:
                           "Since the start of the coronavirus outbreak some places have fully embraced wearing facemasks",
@@ -81,7 +81,7 @@ class InfoScreen extends StatelessWidget {
         floatingActionButton: FloatingActionButton12(
           press: () {
             Navigator.push(context, MaterialPageRoute(builder: (context) {
-              return HomeScreen3App();
+              return const HomeScreen3App();
             }));
           },
         ));
@@ -104,11 +104,11 @@ class PreventCard extends StatelessWidget {
     return GestureDetector(
       onTap: () {
         Navigator.push(context, MaterialPageRoute(builder: (context) {
-          return Symptoms1();
+          return const Symptoms1();
         }));
       },
       child: Padding(
-        padding: EdgeInsets.only(bottom: 10),
+        padding: const EdgeInsets.only(bottom: 10),
         child: SizedBox(
           height: 156,
           child: Stack(
@@ -122,7 +122,7 @@ class PreventCard extends StatelessWidget {
                   color: Colors.white,
                   boxShadow: [
                     BoxShadow(
-                        offset: Offset(0, 8),
+                        offset: const Offset(0, 8),
                         blurRadius: 24,
                         color: kShadowColor)
                   ],
@@ -132,7 +132,8 @@ class PreventCard extends StatelessWidget {
               Positioned(
                   left: 130,
                   child: Container(
-                    padding: EdgeInsets.symmetric(horizontal: 20, vertical: 15),
+                    padding: const EdgeInsets.symmetric(
+                        horizontal: 20, vertical: 15),
                     width: MediaQuery.of(context).size.width - 170,
                     height: 136,
                     child: Column(
@@ -145,7 +146,7 @@ class PreventCard extends StatelessWidget {
                         ),
                         Text(
                           title,
-                          style: TextStyle(fontSize: 12),
+                          style: const TextStyle(fontSize: 12),
                         ),
                         Align(
                             alignment: Alignment.topRight,
@@ -181,7 +182,7 @@ class _SymptomsCardState extends State<SymptomsCard> {
     return Row(
       children: [
         Container(
-          padding: EdgeInsets.all(10),
+          padding: const EdgeInsets.all(10),
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(15),
             color: Colors.white,
@@ -190,10 +191,12 @@ class _SymptomsCardState extends State<SymptomsCard> {
                   ? BoxShadow(
                       blurRadius: 20,
                       color: kActiveShadowColor,
-                      offset: Offset(0, 10),
+                      offset: const Offset(0, 10),
                     )
                   : BoxShadow(
-                      offset: Offset(0, 3), blurRadius: 6, color: kShadowColor)
+                      offset: const Offset(0, 3),
+                      blurRadius: 6,
+                      color: kShadowColor)
             ],
           ),
           child: Column(
@@ -204,7 +207,7 @@ class _SymptomsCardState extends State<SymptomsCard> {
               ),
               Text(
                 widget.symptom,
-                style: TextStyle(fontWeight: FontWeight.bold),
+                style: const TextStyle(fontWeight: FontWeight.bold),
               )
             ],
           ),
@@ -223,7 +226,7 @@ class Symptoms1 extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Colors.white,
         centerTitle: true,
-        title: Text("Waer Face Mask"),
+        title: const Text("Waer Face Mask"),
       ),
     );
   }
