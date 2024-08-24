@@ -46,14 +46,6 @@ class WelcomeScreen extends StatelessWidget {
                 fontSize: 20,
               ),
             ),
-            ElevatedButton(
-                onPressed: () {
-                  exit(0);
-                },
-                child: const Text(
-                  "Exit",
-                  style: TextStyle(fontSize: 29),
-                ))
           ],
         ),
       ),

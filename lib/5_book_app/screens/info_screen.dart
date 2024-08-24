@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:home_work_full/5_book_app/color.dart';
 import 'package:home_work_full/5_book_app/widget/RoundedButton.dart';
 import 'package:home_work_full/5_book_app/widget/book_reating.dart';
+import 'package:home_work_full/6_meditation/Home_page.dart';
 
 class InfoScreen extends StatelessWidget {
   const InfoScreen({super.key});
@@ -43,25 +44,45 @@ class InfoScreen extends StatelessWidget {
                   child: Column(
                     children: [
                       ChapterCard(
-                        press: () {},
+                        press: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => const HomePage6()));
+                        },
                         name: "Money",
                         tag: "Lise is about change",
                         chapterNumber: 1,
                       ),
                       ChapterCard(
-                        press: () {},
+                        press: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => const HomePage6()));
+                        },
                         name: "Power",
                         tag: "Everything loves power",
                         chapterNumber: 2,
                       ),
                       ChapterCard(
-                        press: () {},
+                        press: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => const HomePage6()));
+                        },
                         name: "Influence",
                         tag: "Influence easily like never before",
                         chapterNumber: 3,
                       ),
                       ChapterCard(
-                        press: () {},
+                        press: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => const HomePage6()));
+                        },
                         name: "Win",
                         tag: "Winning is what matters",
                         chapterNumber: 4,
@@ -183,46 +204,48 @@ class ChapterCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
-    return Container(
-      width: size.width - 48,
-      margin: const EdgeInsets.only(bottom: 16),
-      padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 30),
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(38.5),
-        color: Colors.white,
-        boxShadow: [
-          BoxShadow(
-              offset: const Offset(0, 10), blurRadius: 33, color: kShadowColor5)
-        ],
-      ),
-      child: Row(
-        children: [
-          RichText(
-            text: TextSpan(
-              children: [
-                TextSpan(
-                  text: "Chapter $chapterNumber : $name\n",
-                  style: const TextStyle(
-                      fontSize: 16,
-                      color: kBlackColor,
-                      fontWeight: FontWeight.bold),
-                ),
-                TextSpan(
-                  text: tag,
-                  style: const TextStyle(color: kLightBlackColor),
-                ),
-              ],
+    return GestureDetector(
+      onTap: press,
+      child: Container(
+        width: size.width - 48,
+        margin: const EdgeInsets.only(bottom: 16),
+        padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 30),
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(38.5),
+          color: Colors.white,
+          boxShadow: [
+            BoxShadow(
+                offset: const Offset(0, 10),
+                blurRadius: 33,
+                color: kShadowColor5)
+          ],
+        ),
+        child: Row(
+          children: [
+            RichText(
+              text: TextSpan(
+                children: [
+                  TextSpan(
+                    text: "Chapter $chapterNumber : $name\n",
+                    style: const TextStyle(
+                        fontSize: 16,
+                        color: kBlackColor,
+                        fontWeight: FontWeight.bold),
+                  ),
+                  TextSpan(
+                    text: tag,
+                    style: const TextStyle(color: kLightBlackColor),
+                  ),
+                ],
+              ),
             ),
-          ),
-          const Spacer(),
-          IconButton(
-            onPressed: press,
-            icon: const Icon(
+            const Spacer(),
+            const Icon(
               Icons.arrow_forward_ios,
               size: 18,
-            ),
-          ),
-        ],
+            )
+          ],
+        ),
       ),
     );
   }
