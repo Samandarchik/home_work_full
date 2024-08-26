@@ -27,8 +27,7 @@ class DetailsScreen extends StatelessWidget {
           SafeArea(
               child: Padding(
             padding: EdgeInsets.symmetric(horizontal: 20),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
+            child: ListView(
               children: [
                 SizedBox(
                   height: size.height * 0.05,
